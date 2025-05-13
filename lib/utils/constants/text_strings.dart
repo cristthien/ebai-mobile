@@ -22,6 +22,7 @@ class TTexts {
   static const String homeAppbarSubTitle = "Taimoor Sikander";
 // -- Authentication Form Text
   static const String firstName = "First Name";
+  static const String userName = "User Name";
   static const String lastName = "Last Name";
   static const String email = "E-Mail";
   static const String password = "Password";
@@ -47,6 +48,7 @@ class TTexts {
   static const String loginTitle = "Welcome Back,";
   static const String loginSubTitle = "Discover Limitless Choices and Unmatched Convenience.";
   static const String signupTitle = "Let's create your account";
+  static const String iAgreeTo = "I agree to";
   static const String forgetPasswordTitle = "Forget Password?";
   static const String forgetPasswordSubTitle = "Don't worry, sometimes people can forget too. Enter your email and we will send you a password reset link.";
   static const String changeYourPasswordTitle = "Change Your Password";
