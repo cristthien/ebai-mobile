@@ -1,9 +1,12 @@
 /// This class contains all the App Text in String formats.
 class TTexts {
   // -- GLOBAL Texts
+  static const String appTitle = "Ebai";
+  static const String submit = "Submit";
+  static const String tContinue = "Continue";
 
   // -- OnBoarding Texts
-  static const String onBoardingTitle1 = "Choose your product:";
+  static const String onBoardingTitle1 = "Choose your product";
   static const String onBoardingTitle2 = "Select Payment Method";
   static const String onBoardingTitle3 = "Deliver at your door step";
 
@@ -17,4 +20,42 @@ class TTexts {
   // -- Home
   static const String homeAppbarTitle = "Good day for shopping";
   static const String homeAppbarSubTitle = "Taimoor Sikander";
+// -- Authentication Form Text
+  static const String firstName = "First Name";
+  static const String lastName = "Last Name";
+  static const String email = "E-Mail";
+  static const String password = "Password";
+  static const String newPassword = "New Password";
+  static const String username = "Username";
+  static const String phoneNumber = "Phone Number";
+  static const String rememberMe = "Remember Me";
+  static const String forgotPassword = "Forget Password?";
+  static const String signIn = "Sign In";
+  static const String signUp = "Sign Up";
+  static const String createAccount = "Create Account";
+  static const String google = "Sign in with Google";
+  static const String facebook = "Sign up with Facebook";
+  static const String agreeToTerms = "I agree to";
+  static const String privacyPolicy = "Privacy Policy";
+  static const String and = "and";
+  static const String termsOfUse = "Terms of Use";
+  static const String verificationCode = "Verification Code";
+  static const String resendEmail = "Resend Email";
+  static const String resendEmailIn = "Resend email in";
+
+// -- Authentication Headings Text
+  static const String loginTitle = "Welcome Back,";
+  static const String loginSubTitle = "Discover Limitless Choices and Unmatched Convenience.";
+  static const String signupTitle = "Let's create your account";
+  static const String forgetPasswordTitle = "Forget Password?";
+  static const String forgetPasswordSubTitle = "Don't worry, sometimes people can forget too. Enter your email and we will send you a password reset link.";
+  static const String changeYourPasswordTitle = "Change Your Password";
+  static const String changeYourPasswordSubTitle = "Your Account Security is Our Priority! We've Sent You a Secure Link To Safely Change Your Password and Keep Your Account Protected.";
+  static const String confirmEmail = "Verify your email Address";
+  static const String confirmEmailSubTitle = "Congratulations! Your Account Awaits: Verify Your Email to Start Shopping and Experience a World of Unrivaled Deals and Personalized Offers.";
+  static const String emailSentTitle = "Success! Email Sent";
+  static const String emailSentSubTitle = "If you didn't get the email? Check your junk/spam or Resend it.";
+  static const String congratsTitle = "Congratulations";
+  static const String congratsSubTitle = "Your Account has been successfully created!";
+  static const String welcomeTitle = "Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash the Joy of Seamless Online Shopping!";
 }

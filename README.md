@@ -23,7 +23,7 @@ eBai is a mobile application developed using Flutter, offering a modern platform
 1. Install Flutter by following the [official guide](https://docs.flutter.dev/get-started/install).
 2. Clone the project:
    ```bash
-   git clone https://github.com/yourusername/ebai.git
+   git clone https://github.com/cristthien/ebai-mobile.git
    ```
 3. Install the required packages:
    ```bash
