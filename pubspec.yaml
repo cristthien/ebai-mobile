@@ -41,6 +41,7 @@ flutter:
   uses-material-design: true
   # ---- Local Assets ---- #
   assets:
+    - assets/images/animations/
     - assets/images/onboarding/
     - assets/logos/
     - assets/icons/brands/

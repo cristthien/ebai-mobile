@@ -43,6 +43,7 @@ class TTexts {
   static const String verificationCode = "Verification Code";
   static const String resendEmail = "Resend Email";
   static const String resendEmailIn = "Resend email in";
+  static const String done = "Done";
 
 // -- Authentication Headings Text
   static const String loginTitle = "Welcome Back,";
@@ -60,4 +61,7 @@ class TTexts {
   static const String congratsTitle = "Congratulations";
   static const String congratsSubTitle = "Your Account has been successfully created!";
   static const String welcomeTitle = "Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash the Joy of Seamless Online Shopping!";
+
+  static const String yourAccountCreatedTitle = "Your account successfully created!";
+  static const String yourAccountCreatedSubTitle = "Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash the Joy of Seamless Online Shopping!";
 }
