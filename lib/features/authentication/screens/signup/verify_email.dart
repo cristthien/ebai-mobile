@@ -14,6 +14,7 @@ class VerifyEmailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('VerifyEmailScreen: Bắt đầu build.');
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -44,13 +45,7 @@ class VerifyEmailScreen extends StatelessWidget {
               // Buttons
               SizedBox(
                 width: double.infinity,
-                child: ElevatedButton(onPressed: () => Get.to(
-                      () => SuccessScreen(
-                    image: TImages.staticSuccessIllustration,
-                    title: TTexts.yourAccountCreatedTitle,
-                    subTitle: TTexts.yourAccountCreatedSubTitle,
-                    onPressed: () => Get.to(() => const LoginScreen()),
-                  ), // SuccessScreen
+                child: ElevatedButton(onPressed: () =>Get.offAll(() => const LoginScreen() , // SuccessScreen
                 ), child: const Text(TTexts.tContinue)),
               ),
               const SizedBox(height: TSizes.spaceBtwItems),

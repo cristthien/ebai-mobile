@@ -25,7 +25,7 @@ class LoginScreen extends StatelessWidget {
               children: [
                 /// Logo, Title & Sub-Title
                 TLoginHeader(dark: dark),
-                TLoginForm(dark: dark)]),
+                 TLoginForm()]),
         ),
       ),
     );

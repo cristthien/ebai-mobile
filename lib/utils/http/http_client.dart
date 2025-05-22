@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http; // Alias http for the http package
 
 class THttpHelper {
   static const String _baseUrl =
-      'https://your-api-base-url.com'; // Replace with your API base URL
+      'http://192.168.20.166:3000/api/v1';
 
   // Helper method to make a GET request
   static Future<Map<String, dynamic>> get(String endpoint) async {
@@ -42,10 +42,12 @@ class THttpHelper {
 
   /// Handle the HTTP response
   static Map<String, dynamic> _handleResponse(http.Response response) {
-    if (response.statusCode == 200) {
-      return json.decode(response.body);
-    } else {
-      throw Exception('Failed to load data: ${response.statusCode}');
+    final body = json.decode(response.body);
+    // Dù HTTP trả về 200/201, nếu body chứa statusCode >= 400 thì đó là lỗi
+    if (body['statusCode'] != null && body['statusCode'] >= 400) {
+      final errorMessage = body['message'] ?? 'Unknown error occurred';
+      throw Exception(errorMessage);
     }
+    return body;
   }
 }
