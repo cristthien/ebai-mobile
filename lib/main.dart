@@ -20,15 +20,16 @@ Future<void> main() async {
   /// -- Await Splash until other items Load
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
-  print('Checking database health...');
-  try {
-    final healthService = HealthService();
-    final healthStatus = await healthService.checkDatabaseHealth();
-    Get.put(AuthenticationRepository());
-
-  }catch(e){
-    print(e);
-    return;
-  }
+  // print('Checking database health...');
+  // try {
+  //   final healthService = HealthService();
+  //   final healthStatus = await healthService.checkDatabaseHealth();
+  //   Get.put(AuthenticationRepository());
+  //
+  // }catch(e){
+  //   print(e);
+  //   return;
+  // }
+  Get.put(AuthenticationRepository());
   runApp(const App());
 }

@@ -1,3 +1,4 @@
+import 'package:ebai/navigation_menu.dart';
 import 'package:ebai/utils/validators/validation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -67,7 +68,7 @@ class TLoginForm extends StatelessWidget {
                     ),
 
                     /// Forget Password
-                    TextButton(onPressed: () => Get.to(()=> const ForgetPassword()), child: const Text(TTexts.forgotPassword ) ),
+                    TextButton(onPressed: () => Get.to(() => const NavigationMenu()), child: const Text(TTexts.forgotPassword ) ),
                   ],
                 ),
                 const SizedBox(height: TSizes.spaceBtwSections),

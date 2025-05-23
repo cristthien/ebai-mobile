@@ -13,7 +13,7 @@ class TAppBarTheme {
     actionsIconTheme: IconThemeData(color: Colors.black, size: 24),
     titleTextStyle: TextStyle(
       fontSize: 18.0,
-      fontWeight: FontWeight.w600,
+       fontWeight: FontWeight.w600,
       color: Colors.black,
     ),
   ); // AppBarTheme

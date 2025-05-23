@@ -1,4 +1,5 @@
 
+import 'package:ebai/navigation_menu.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -43,14 +44,14 @@ class LoginController extends GetxController {
 
 
       if (rememberMe.value) {
-        localStorage.write('Access_Token', userData.accessToken);
-        localStorage.write('username',userData['user'].username );
-        localStorage.write('role', userData['user'].role);
+        localStorage.write('access_token', userData['access_token']);
+        localStorage.write('username',userData['user']['username'] );
+        localStorage.write('role', userData['user']['role']);
       }
 
       TFullScreenLoader.stopLoading();
       // // Show Success Message
-      // Get.to(() => const VerifyEmailScreen());
+      Get.to(() => NavigationMenu());
     }catch(e){
       TFullScreenLoader.stopLoading();
       TLoaders.errorSnackBar(title: 'Error', message: e.toString());
