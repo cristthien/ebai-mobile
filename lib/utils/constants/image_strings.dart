@@ -31,5 +31,5 @@ class TImages {
 
 
   // -- Products
-  static const String productImage1 = "assets/images/products/iphone-14-pro-max.jpg";
+  static const String productImage1 = "assets/images/products/iphone.jpg";
 }
