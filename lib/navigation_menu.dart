@@ -8,6 +8,7 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:iconsax/iconsax.dart';
 
+import 'features/personalization/screens/settings/settings.dart';
 import 'features/shop/screens/home/home.dart';
 
 class NavigationMenu extends StatelessWidget {
@@ -47,6 +48,6 @@ class NavigationController extends GetxController{
     const HomeScreen(),
     Container(color: Colors.purple),
     Container(color: Colors.orange),
-    Container(color: Colors.blue),
+    const SettingsScreen(),
   ];
 }
