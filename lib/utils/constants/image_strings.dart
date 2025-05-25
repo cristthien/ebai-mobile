@@ -28,4 +28,8 @@ class TImages {
   static const String promoBanner1 = "assets/images/banner/promo-banner-1.jpg";
   static const String promoBanner2 = "assets/images/banner/promo-banner-2.webp";
   static const String promoBanner3 = "assets/images/banner/promo-banner-3.webp";
+
+
+  // -- Products
+  static const String productImage1 = "assets/images/products/iphone-14-pro-max.jpg";
 }

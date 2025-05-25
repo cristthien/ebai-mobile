@@ -1,5 +1,6 @@
 import 'package:ebai/common/appbar/appbar.dart';
 import 'package:ebai/common/texts/section_heading.dart';
+import 'package:ebai/common/widgets/layouts/grid_layout.dart';
 import 'package:ebai/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:ebai/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:ebai/features/shop/screens/home/widgets/promo_slider.dart';
@@ -10,6 +11,7 @@ import 'package:iconsax/iconsax.dart';
 import '../../../../common/custom_shapes/containers/circular_container_widget.dart';
 import '../../../../common/custom_shapes/containers/search_container.dart';
 import '../../../../common/image_text_widgets/vertical_image_text.dart';
+import '../../../../common/widgets/products/product_cards/product_card_vertical.dart';
 import '../../../../utils/constants/image_strings.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -48,11 +50,20 @@ class HomeScreen extends StatelessWidget {
             ), // Column
             Padding(
               padding: EdgeInsets.all(TSizes.defaultSpace),
-              child: TPromoSlider(banners: [TImages.promoBanner1, TImages.promoBanner2, TImages.promoBanner3])
-            )
+              child: Column(
+                  children: [
+                    // -- Promo slider
+                    const TPromoSlider(banners: [TImages.promoBanner1, TImages.promoBanner2, TImages.promoBanner3]),
+                    const SizedBox(height: TSizes.spaceBtwSections),
+
+                    // -- Popular product
+                    TGridLayout(itemCount: 2, itemBuilder: (_, index) => const TProductCardVertical())
+                ],
+              ),
+            ),
           ],
-        ), // SingleChildScrollView
-      ), // Scaffold
+        ),
+      ),
     );
   }
 }

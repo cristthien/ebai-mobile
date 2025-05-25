@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../common/appbar/appbar.dart';
-import '../../../../../common/widgets/products.cart/cart_menu_icon.dart';
+import '../../../../../common/widgets/products/cart/cart_menu_icon.dart';
 import '../../../../../utils/constants/color.dart';
 import '../../../../../utils/constants/text_strings.dart';
 
