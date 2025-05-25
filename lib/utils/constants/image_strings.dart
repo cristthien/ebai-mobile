@@ -4,6 +4,8 @@ class TImages {
   static const String darkAppLogo = "assets/logos/ebai.png";
   static const String lightAppLogo = "assets/logos/ebai.png";
 
+
+
   // -- Social Logos
   static const String google = "assets/logos/google-icon.png";
   static const String facebook = "assets/logos/facebook-icon.png";
@@ -17,5 +19,17 @@ class TImages {
   static const String staticSuccessIllustration = "assets/images/animations/sammy-line-success.gif";
   static const String deliveredInPlaneIllustration = "assets/images/animations/sammy-line-come-back-later.gif";
   static const String deliveredEmailIllustration = "assets/images/animations/sammy-line-man-receives-a-mail.gif";
-  static const String verifyIllustration = "assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif";
+  static const String docerAnimation = "assets/images/animations/docer-animation.json";
+
+  // -- Categories icons
+  static const String shoeIcon = "assets/logos/google-icon.png";
+
+  // -- Banner
+  static const String promoBanner1 = "assets/images/banner/promo-banner-1.jpg";
+  static const String promoBanner2 = "assets/images/banner/promo-banner-2.webp";
+  static const String promoBanner3 = "assets/images/banner/promo-banner-3.webp";
+
+
+  // -- Products
+  static const String productImage1 = "assets/images/products/iphone-14-pro-max.jpg";
 }

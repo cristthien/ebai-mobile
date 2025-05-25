@@ -26,6 +26,7 @@ class TTexts {
   static const String lastName = "Last Name";
   static const String email = "E-Mail";
   static const String password = "Password";
+  static const String rePassword  = "Password Confirmation";
   static const String newPassword = "New Password";
   static const String username = "Username";
   static const String phoneNumber = "Phone Number";
