@@ -23,7 +23,7 @@ class TProductImageSlider extends StatelessWidget {
     final dark = THelperFunctions.isDarkMode(context);
     return TCurvedEdgesWidget(
       child: Container(
-        color: dark ? TColors.darkerGrey : TColors.light,
+        color: dark ? TColors.white : TColors.white,
         padding: const EdgeInsets.only(top: TSizes.defaultSpace, bottom: TSizes.defaultSpace),
         child: Column(
         children: [Stack(
@@ -62,7 +62,7 @@ class TProductImageSlider extends StatelessWidget {
           separatorBuilder: (_, __) => const SizedBox(width: TSizes.spaceBtwItems),
           itemBuilder: (_, index) => TRoundedImage(
             width: 80,
-            backgroundColor: dark ? TColors.dark : TColors.white,
+            backgroundColor: dark ? TColors.white : TColors.white,
             border: Border.all(color: TColors.primary),
             padding: const EdgeInsets.all(TSizes.sm),
             imageUrl: TImages.productImage1,

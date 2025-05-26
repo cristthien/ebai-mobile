@@ -27,14 +27,6 @@ class TProductMetaData extends StatelessWidget {
         TProductTitleText(title: title),
             /// Title
         const SizedBox(height: TSizes.spaceBtwItems / 1.5),
-        Row(
-          children: [
-            const TProductTitleText(title: 'Condition'),
-            const SizedBox(width: TSizes.spaceBtwItems),
-            Text(condition, style: Theme.of(context).textTheme.titleMedium),
-          ],
-        ), // Row
-        const SizedBox(height: TSizes.spaceBtwItems / 1.5),
 
     ],
     );

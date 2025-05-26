@@ -34,6 +34,7 @@ class SettingsScreen extends StatelessWidget {
                   /// User Profile Card
                   const TUserProfileTile(),
                   const SizedBox(height: TSizes.spaceBtwSections),
+
                 ],
               ),
             ),

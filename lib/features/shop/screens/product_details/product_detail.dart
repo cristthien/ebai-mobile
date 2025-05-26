@@ -1,15 +1,10 @@
-
-import 'package:ebai/features/shop/screens/product_details/widgets/product_attributes.dart';
 import 'package:ebai/features/shop/screens/product_details/widgets/product_detail_image_slider.dart';
 import 'package:ebai/features/shop/screens/product_details/widgets/product_meta_data.dart';
-import 'package:ebai/features/shop/screens/product_details/widgets/rating_share_widget.dart';
+import 'package:ebai/features/shop/screens/product_details/widgets/product_specification.dart';
 import 'package:ebai/features/shop/screens/product_details/widgets/product_bidding_section.dart';
-import 'package:ebai/features/shop/screens/product_details/widgets/product_detail_image_slider.dart';
-import 'package:ebai/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 import '../../../../common/texts/section_heading.dart';
 import '../../../../utils/constants/sizes.dart';
@@ -31,6 +26,7 @@ class ProductDetailScreen extends StatelessWidget {
             return const Center(child: Text('Failed to load product details.'));
           } else {
             final product = controller.productDetails.value!;
+            print(product.specifications);
             return SingleChildScrollView(
               child: Column(
                 children: [
@@ -43,10 +39,10 @@ class ProductDetailScreen extends StatelessWidget {
                       children: [
                         /// - Price, Title, Stock, & Brand
                         TProductMetaData(title: product.name, slug: product.slug, condition: product.condition),
-                        // ProductBiddingSection(
-                        //   productSlug: product.slug,
-                        //   endDate: product.endDate, // Truyền endDate từ ProductModel
-                        // ),
+                        ProductBiddingSection(
+                          slug: product.slug,
+                          endDate: product.endDate, // Truyền endDate từ ProductModel
+                        ),
                         // BiddingComponent(),
                         const SizedBox(height: TSizes.spaceBtwSections),
 
@@ -68,13 +64,7 @@ class ProductDetailScreen extends StatelessWidget {
                         const SizedBox(height: TSizes.spaceBtwItems),
 
                         /// Chỉnh phần này thành specification
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const TSectionHeading(title: 'Specification', showActionButton: false),
-                            IconButton(icon: const Icon(Iconsax.arrow_right_3, size: 18), onPressed: (){}),
-                          ],
-                        ), // Row
+                        SpecificationSection(data:product.specifications),
                         const SizedBox(height: TSizes.spaceBtwSections),
                       ],
                     ),

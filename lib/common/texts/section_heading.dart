@@ -1,33 +1,39 @@
-import 'package:flutter/material.dart'; // Đảm bảo đã import
+import 'package:flutter/material.dart';
 
 class TSectionHeading extends StatelessWidget {
   const TSectionHeading({
     super.key,
     this.onPressed,
     this.textColor,
-    this.buttonTitle = 'View all',
     required this.title,
     this.showActionButton = true,
+    this.actionButton,
   });
 
   final Color? textColor;
   final bool showActionButton;
-  final String title, buttonTitle;
-  final VoidCallback? onPressed; // Changed from Function()? to VoidCallback? for clarity
+  final String title;
+  final VoidCallback? onPressed;
+  final Widget? actionButton;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(
-          title,
-          style: Theme.of(context).textTheme.headlineSmall!.apply(color: textColor),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
+        Expanded(
+          child: Text(
+            title,
+            style: Theme.of(context)
+                .textTheme
+                .headlineSmall!
+                .apply(color: textColor),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
         ),
-        if (showActionButton) // Sử dụng if (showActionButton) thay vì if (showActionButton) TextButton
-          TextButton(onPressed: onPressed, child: Text(buttonTitle))
+        if (showActionButton && actionButton != null)
+          IconButton(onPressed: onPressed, icon: actionButton!)
       ],
-    ); // Row
+    );
   }
 }

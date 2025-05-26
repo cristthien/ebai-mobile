@@ -1,6 +1,7 @@
 import 'package:ebai/common/widgets/texts/product_price_text.dart';
 import 'package:ebai/common/widgets/texts/product_title_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../features/shop/models/short_product_model.dart';
