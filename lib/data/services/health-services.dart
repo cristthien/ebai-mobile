@@ -15,7 +15,7 @@ class HealthService {
     } catch (e) {
       // Xử lý lỗi khi gọi API (ví dụ: in lỗi ra console hoặc ném lại lỗi)
       print('Error checking database health: $e');
-      throw e; // Ném lại lỗi để nơi gọi hàm này có thể xử lý
+      rethrow; // Ném lại lỗi để nơi gọi hàm này có thể xử lý
     }
   }
 }

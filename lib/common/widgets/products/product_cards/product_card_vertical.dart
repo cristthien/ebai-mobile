@@ -1,12 +1,8 @@
 import 'package:ebai/common/widgets/texts/product_price_text.dart';
 import 'package:ebai/common/widgets/texts/product_title_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../../features/shop/screens/product_details/product_detail.dart';
 import '../../../../utils/constants/color.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';

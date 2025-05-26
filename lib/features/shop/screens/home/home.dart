@@ -1,4 +1,3 @@
-import 'package:ebai/common/appbar/appbar.dart';
 import 'package:ebai/common/texts/section_heading.dart';
 import 'package:ebai/common/widgets/layouts/grid_layout.dart';
 import 'package:ebai/features/shop/screens/home/widgets/home_appbar.dart';
@@ -6,11 +5,9 @@ import 'package:ebai/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:ebai/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:ebai/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/custom_shapes/containers/circular_container_widget.dart';
 import '../../../../common/custom_shapes/containers/search_container.dart';
-import '../../../../common/image_text_widgets/vertical_image_text.dart';
 import '../../../../common/widgets/products/product_cards/product_card_vertical.dart';
 import '../../../../utils/constants/image_strings.dart';
 class HomeScreen extends StatelessWidget {
@@ -38,16 +35,22 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(left: TSizes.defaultSpace),
                     child: Column(
                       children: [
+                        /// Heading
                         TSectionHeading(title: 'Popular Categories', showActionButton: false, textColor: Colors.white),
                         SizedBox(height: TSizes.spaceBtwItems),
+                        /// Categories
                         THomeCategories(), // SizedBox
 
-                      ]
-                    )
+                      ],
+                    ),
                   ),
+
+                  SizedBox(height: TSizes.spaceBtwSections),
                 ],
-              ), // Column, TPrimaryHeaderContainer
-            ), // Column
+              ),
+            ),
+
+            ///Body
             Padding(
               padding: EdgeInsets.all(TSizes.defaultSpace),
               child: Column(
@@ -55,6 +58,10 @@ class HomeScreen extends StatelessWidget {
                     // -- Promo slider
                     const TPromoSlider(banners: [TImages.promoBanner1, TImages.promoBanner2, TImages.promoBanner3]),
                     const SizedBox(height: TSizes.spaceBtwSections),
+
+                    // -- Heading
+                    TSectionHeading(title: 'Popular Products', showActionButton: false),
+                    const SizedBox(height: TSizes.spaceBtwItems),
 
                     // -- Popular product
                     TGridLayout(itemCount: 2, itemBuilder: (_, index) => const TProductCardVertical())

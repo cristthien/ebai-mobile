@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
 import '../../../../data/services/authentication_services.dart';
 import '../../../../utils/constants/image_strings.dart';

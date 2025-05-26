@@ -1,9 +1,7 @@
 import 'package:ebai/navigation_menu.dart';
 import 'package:ebai/utils/validators/validation.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../../utils/constants/color.dart';
@@ -11,7 +9,6 @@ import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
 import '../../../controllers/login/login_controller.dart';
-import '../../password_configuration/forget_password.dart';
 import '../../signup/signup.dart';
 
 class TLoginForm extends StatelessWidget {

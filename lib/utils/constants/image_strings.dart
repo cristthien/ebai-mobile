@@ -32,4 +32,8 @@ class TImages {
 
   // -- Products
   static const String productImage1 = "assets/images/products/iphone.jpg";
+
+
+  // -- User
+  static const String user = "assets/images/user/user.png";
 }

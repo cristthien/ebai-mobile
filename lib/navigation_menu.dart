@@ -1,11 +1,7 @@
 import 'package:ebai/utils/constants/color.dart';
 import 'package:ebai/utils/helpers/helper_functions.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_rx/src/rx_types/rx_types.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:iconsax/iconsax.dart';
 
 import 'features/personalization/screens/settings/settings.dart';
@@ -46,6 +42,8 @@ class NavigationController extends GetxController{
 
   final screens = [
     const HomeScreen(),
+    ///const StoreScreen(),
+    ///const FavouritesScreen(),
     Container(color: Colors.purple),
     Container(color: Colors.orange),
     const SettingsScreen(),
