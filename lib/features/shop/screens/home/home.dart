@@ -1,4 +1,3 @@
-import 'package:ebai/common/appbar/appbar.dart';
 import 'package:ebai/common/texts/section_heading.dart';
 import 'package:ebai/common/widgets/layouts/grid_layout.dart';
 import 'package:ebai/features/shop/screens/home/widgets/home_appbar.dart';
@@ -41,16 +40,22 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(left: TSizes.defaultSpace),
                     child: Column(
                       children: [
+                        /// Heading
                         TSectionHeading(title: 'Popular Categories', showActionButton: false, textColor: Colors.white),
                         SizedBox(height: TSizes.spaceBtwItems),
+                        /// Categories
                         THomeCategories(), // SizedBox
 
-                      ]
-                    )
+                      ],
+                    ),
                   ),
+
+                  SizedBox(height: TSizes.spaceBtwSections),
                 ],
-              ), // Column, TPrimaryHeaderContainer
-            ), // Column
+              ),
+            ),
+
+            ///Body
             Padding(
               padding: EdgeInsets.all(TSizes.defaultSpace),
               child: Column(

@@ -1,5 +1,4 @@
 import 'package:ebai/features/authentication/controllers/onboarding/onboarding_controller.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../utils/constants/sizes.dart';

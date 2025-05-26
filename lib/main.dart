@@ -10,7 +10,6 @@ import 'data/repositories/authentication_repository.dart';
 import 'data/socket_service/product_socket_services.dart';
 
 
-
 /// -- Entry point of Flutter App
 Future<void> main() async {
 

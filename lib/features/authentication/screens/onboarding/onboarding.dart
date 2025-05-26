@@ -3,12 +3,8 @@ import 'package:ebai/features/authentication/screens/onboarding/widgets/onboardi
 import 'package:ebai/features/authentication/screens/onboarding/widgets/onboarding_next_button.dart';
 import 'package:ebai/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
 import 'package:ebai/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
-import 'package:ebai/utils/constants/sizes.dart';
-import 'package:ebai/utils/device/device_utility.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/text_strings.dart';

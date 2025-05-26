@@ -7,10 +7,10 @@ class StartupErrorScreen extends StatelessWidget {
 
   /// Constructor
   const StartupErrorScreen({
-    Key? key,
+    super.key,
     required this.errorMessage,
     this.onRetry, // Make onRetry optional
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

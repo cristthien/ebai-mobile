@@ -1,3 +1,8 @@
+
+import 'package:ebai/features/shop/screens/product_details/widgets/product_attributes.dart';
+import 'package:ebai/features/shop/screens/product_details/widgets/product_detail_image_slider.dart';
+import 'package:ebai/features/shop/screens/product_details/widgets/product_meta_data.dart';
+import 'package:ebai/features/shop/screens/product_details/widgets/rating_share_widget.dart';
 import 'package:ebai/features/shop/screens/product_details/widgets/product_bidding_section.dart';
 import 'package:ebai/features/shop/screens/product_details/widgets/product_detail_image_slider.dart';
 import 'package:ebai/features/shop/screens/product_details/widgets/product_meta_data.dart';

@@ -6,7 +6,6 @@ import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/constants/text_strings.dart';
 import '../../../../utils/helpers/helper_functions.dart';
-import '../../../../widgets/success_screen/success_screen.dart';
 import '../login/login.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
