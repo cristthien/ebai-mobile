@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/appbar/appbar.dart';
@@ -6,12 +7,17 @@ import '../../../../common/custom_shapes/containers/circular_container_widget.da
 import '../../../../common/texts/section_heading.dart';
 import '../../../../common/widgets/list_tiles/settings_menu_tile.dart';
 import '../../../../common/widgets/list_tiles/user_profile_tile.dart';
+import '../../../../data/local_storage/local_storage.dart';
 import '../../../../utils/constants/color.dart';
 import '../../../../utils/constants/sizes.dart';
+import '../../../authentication/screens/login/login.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
-
+  Future<void> _logout(BuildContext context) async {
+    await TLocalStorage().clearAll();
+    Get.offAll(() => const LoginScreen());
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,7 +108,9 @@ class SettingsScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton(
-                        onPressed: () {}, child: const Text('Logout')),
+                        onPressed: () {
+                          _logout(context);
+                        }, child: const Text('Logout')),
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections * 2.5),
                 ],

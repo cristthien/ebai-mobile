@@ -5,6 +5,7 @@ import 'package:get_storage/get_storage.dart';
 import '../../features/authentication/screens/login/login.dart';
 import '../../features/authentication/screens/onboarding/onboarding.dart';
 import '../../navigation_menu.dart';
+import '../../utils/local_storage/storage_utility.dart';
 
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
@@ -23,8 +24,8 @@ class AuthenticationRepository extends GetxController {
   screenRedirect() async {
     // Local Storage
     deviceStorage.writeIfNull('isFirstTime', true);
-    print(deviceStorage.read('access_token'));
-    if (deviceStorage.read('access_token') != null) {
+    final accessToken = await TLocalStorage().readData('access_token');
+    if (accessToken != null) {
       Get.offAll(NavigationMenu());
     }else if (deviceStorage.read('isFirstTime')!= true ){
       Get.offAll(() => const LoginScreen());

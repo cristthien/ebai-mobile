@@ -4,7 +4,7 @@ import '../../../../../common/appbar/appbar.dart';
 import '../../../../../common/widgets/products/cart/cart_menu_icon.dart';
 import '../../../../../data/local_storage/local_storage.dart';
 import '../../../../../utils/constants/color.dart';
-import '../../../../../utils/constants/text_strings.dart';// <--- Import TLocalStorage
+import '../../../../../utils/constants/text_strings.dart';
 
 class THomeAppBar extends StatelessWidget {
   const THomeAppBar({
@@ -12,11 +12,10 @@ class THomeAppBar extends StatelessWidget {
   });
 
   // Hàm này sẽ đọc username từ local storage
-  Future<String> _loadUserName() async {
+  Future<String?> _loadUserName() async { // Thay đổi kiểu trả về thành String?
     final localStorage = TLocalStorage();
-    // Lấy 'user_name' từ TLocalStorage, mặc định là 'Guest User' nếu không tìm thấy
-    final userName = localStorage.readData<String>('username') ?? TTexts.homeAppbarSubTitle;
-    return userName;
+    final userName = localStorage.readData<String>('username');
+    return userName; // Trả về null nếu không tìm thấy
   }
 
   @override
@@ -27,7 +26,7 @@ class THomeAppBar extends StatelessWidget {
         children: [
           Text(TTexts.homeAppbarTitle, style: Theme.of(context).textTheme.labelMedium!.apply(color: TColors.grey)),
           // Sử dụng FutureBuilder để hiển thị username
-          FutureBuilder<String>(
+          FutureBuilder<String?>( // Thay đổi kiểu FutureBuilder thành String?
             future: _loadUserName(), // Gọi hàm đọc username
             builder: (context, snapshot) {
               // Trạng thái: Đang tải dữ liệu
@@ -47,11 +46,12 @@ class THomeAppBar extends StatelessWidget {
                 );
               }
 
-              // Trạng thái: Dữ liệu đã tải xong và không có lỗi
-              final userName = snapshot.data ?? TTexts.homeAppbarSubTitle; // Lấy username hoặc giá trị mặc định
+              // Trạng thái: Dữ liệu đã tải xong
+              // userName sẽ là null nếu không tìm thấy 'username'
+              final userName = snapshot.data;
 
               return Text(
-                userName, // <--- Áp dụng username từ TLocalStorage
+                userName ?? TTexts.homeAppbarSubTitle, // Hiển thị username hoặc 'Guest User'
                 style: Theme.of(context).textTheme.headlineSmall!.apply(color: TColors.white),
               );
             },
@@ -59,7 +59,18 @@ class THomeAppBar extends StatelessWidget {
         ],
       ),
       actions: [
-        TCartCounterIcon(onPressed: () {}, iconColor: TColors.white),
+        // Sử dụng FutureBuilder một lần nữa để kiểm tra sự tồn tại của username
+        FutureBuilder<String?>(
+          future: _loadUserName(), // Gọi lại hàm đọc username
+          builder: (context, snapshot) {
+            // Hiển thị CartIcon chỉ khi username tồn tại và không có lỗi
+            if (snapshot.connectionState == ConnectionState.done && snapshot.hasData && snapshot.data != null) {
+              return TCartCounterIcon(onPressed: () {}, iconColor: TColors.white);
+            }
+            // Nếu không có username hoặc đang tải, không hiển thị gì cả
+            return const SizedBox.shrink(); // Widget rỗng
+          },
+        ),
       ],
     );
   }

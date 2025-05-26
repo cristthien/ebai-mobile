@@ -18,8 +18,8 @@ class TTexts {
       "From Our Doorstep to Yours - Swift, Secure, and Contactless Delivery!";
 
   // -- Home
-  static const String homeAppbarTitle = "Good day for shopping";
-  static const String homeAppbarSubTitle = "Taimoor Sikander";
+  static const String homeAppbarTitle = "Good day for auction";
+  static const String homeAppbarSubTitle = "Guest User";
 // -- Authentication Form Text
   static const String firstName = "First Name";
   static const String userName = "User Name";

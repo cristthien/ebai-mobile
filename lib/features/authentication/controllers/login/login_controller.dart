@@ -8,6 +8,7 @@ import '../../../../../data/services/authentication_services.dart';
 import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/popups/full_screen_loader.dart';
 import '../../../../../utils/popups/loaders.dart';
+import '../../../../data/local_storage/local_storage.dart';
 
 class LoginController extends GetxController {
   static LoginController get instance => Get.find();
@@ -44,9 +45,10 @@ class LoginController extends GetxController {
 
 
       if (rememberMe.value) {
-        localStorage.write('access_token', userData['access_token']);
-        localStorage.write('username',userData['user']['username'] );
-        localStorage.write('role', userData['user']['role']);
+        await TLocalStorage().saveData('access_token',  userData['access_token']);
+        await TLocalStorage().saveData('username', userData['user']['username']);
+        await TLocalStorage().saveData('role', userData['user']['role']);
+        await TLocalStorage().saveData('email', email.text.trim());
       }
 
       TFullScreenLoader.stopLoading();

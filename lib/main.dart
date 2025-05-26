@@ -21,14 +21,14 @@ Future<void> main() async {
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   await dotenv.load(fileName: ".env");
   await TLocalStorage.init();
-  // 4. LƯU TRỮ JWT VÀO LOCAL STORAGE TRƯỚC KHI ỨNG DỤNG CHẠY
-  const String jwtToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4MjQ4OTYxLCJleHAiOjE3NDgzMzUzNjF9.F9qw1kERC0P6nIWyXYnZLaherl9vYlFqbC80G1h0nRY";
-  const String username = "GiaThien";
-  await TLocalStorage().saveData('access_token', jwtToken);
-  await TLocalStorage().saveData('username', username);
-  await TLocalStorage().saveData('role', 'user');
-  await TLocalStorage().saveData('email', 'cristhuuthien@gmail.com');
-  print('JWT Token has been saved to shared_preferences.');
+  // // 4. LƯU TRỮ JWT VÀO LOCAL STORAGE TRƯỚC KHI ỨNG DỤNG CHẠY
+  // const String jwtToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4MjQ4OTYxLCJleHAiOjE3NDgzMzUzNjF9.F9qw1kERC0P6nIWyXYnZLaherl9vYlFqbC80G1h0nRY";
+  // const String username = "GiaThien";
+  // await TLocalStorage().saveData('access_token', jwtToken);
+  // await TLocalStorage().saveData('username', username);
+  // await TLocalStorage().saveData('role', 'user');
+  // await TLocalStorage().saveData('email', 'cristhuuthien@gmail.com');
+  // print('JWT Token has been saved to shared_preferences.');
   Get.put(ProductSocketService());
   // Lấy instance của service
   final productSocketService = Get.find<ProductSocketService>();
