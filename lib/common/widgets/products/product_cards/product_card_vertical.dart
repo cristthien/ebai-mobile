@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../../../features/shop/models/short_product_model.dart';
 import '../../../../features/shop/screens/product_details/product_detail.dart';
 import '../../../../utils/constants/color.dart';
 import '../../../../utils/constants/image_strings.dart';
@@ -17,15 +18,15 @@ import '../../../styles/shadow.dart';
 import '../../icons/t_circular_icon.dart';
 
 class TProductCardVertical extends StatelessWidget {
-  const TProductCardVertical({super.key});
-
+  const TProductCardVertical({super.key, required this.product});
+  final ShortProductModel product;
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
 
     /// Container with side paddings, color, edges, radius and shadow.
     return GestureDetector(
-      // onTap: () => Get.to(() => const ProductDetailScreen()),
+      onTap: () => Get.to(() =>  ProductDetailScreen(slug: product.slug)  ),
       child: Container(
         width: 180,
         padding: EdgeInsets.all(1),
@@ -44,7 +45,7 @@ class TProductCardVertical extends StatelessWidget {
               child: Stack(
                 children: [
                   /// -- Thumbnail Image
-                  const TRoundedImage(imageUrl: TImages.productImage1, applyImageRadius: true),
+                  TRoundedImage(imageUrl: product.image, applyImageRadius: true,isNetworkImage: true),
       
                   /// -- Sale Tag
                   Positioned(
@@ -74,7 +75,7 @@ class TProductCardVertical extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const TProductTitleText(title: 'Green Nike Air Shoes', smallSize: true),
+                TProductTitleText(title: product.name, smallSize: true),
                 const SizedBox(height: TSizes.spaceBtwItems / 2),
                 Row(
                   children: [
@@ -87,7 +88,7 @@ class TProductCardVertical extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   /// Price
-                  const TProductPriceText(price: "35.0"),
+                  TProductPriceText(price: product.highestBid),
 
                   /// Add to cart button
                   Container(

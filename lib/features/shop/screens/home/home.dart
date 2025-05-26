@@ -6,18 +6,21 @@ import 'package:ebai/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:ebai/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:ebai/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/custom_shapes/containers/circular_container_widget.dart';
 import '../../../../common/custom_shapes/containers/search_container.dart';
-import '../../../../common/image_text_widgets/vertical_image_text.dart';
 import '../../../../common/widgets/products/product_cards/product_card_vertical.dart';
+import '../../../../common/widgets/shimmers/vertical_product_shimmer.dart';
 import '../../../../utils/constants/image_strings.dart';
+import '../../controllers/product_controller.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(ProductController());
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -55,9 +58,17 @@ class HomeScreen extends StatelessWidget {
                     // -- Promo slider
                     const TPromoSlider(banners: [TImages.promoBanner1, TImages.promoBanner2, TImages.promoBanner3]),
                     const SizedBox(height: TSizes.spaceBtwSections),
+                    Obx((){
+                      if (controller.isLoading.value) return const TVerticalProductShimmer();
+                      if (controller.featuredProducts.isEmpty) {
+                        return Center(child: Text('No Products Found', style: Theme.of(context).textTheme.bodyMedium));
+                      } ;
 
+                      return TGridLayout(itemCount: controller.featuredProducts.length, itemBuilder: (_, i) => TProductCardVertical(product: controller.featuredProducts[i]));
+
+                    } )
                     // -- Popular product
-                    TGridLayout(itemCount: 2, itemBuilder: (_, index) => const TProductCardVertical())
+
                 ],
               ),
             ),
