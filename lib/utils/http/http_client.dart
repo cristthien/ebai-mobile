@@ -43,7 +43,6 @@ class THttpHelper {
   /// Handle the HTTP response
   static Map<String, dynamic> _handleResponse(http.Response response) {
     final body = json.decode(response.body);
-    // Dù HTTP trả về 200/201, nếu body chứa statusCode >= 400 thì đó là lỗi
     if (body['statusCode'] != null && body['statusCode'] >= 400) {
       final errorMessage = body['message'] ?? 'Unknown error occurred';
       throw Exception(errorMessage);
