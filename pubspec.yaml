@@ -27,6 +27,7 @@ dependencies:
   socket_io_client: ^3.1.2
   timeago: ^3.6.0
   shared_preferences: ^2.2.3
+  cached_network_image: ^3.0.0
 
   #Icons
   iconsax: ^0.0.8

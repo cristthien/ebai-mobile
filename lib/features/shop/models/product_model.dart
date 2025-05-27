@@ -63,7 +63,7 @@ class ProductModel {
 
     // Xử lý 'images' để thêm domain (nếu cần, dùng dotenv như bạn đã làm)
     // Giả sử dotenv đã được load trong main.dart
-    final String imageDomain = dotenv.env['IMAGE_DOMAIN'] ?? 'https://default-domain.com/'; // <-- Dùng domain từ .env
+    final String imageDomain = dotenv.env['API_IMAGE_BASE_URL'] ?? 'https://default-domain.com/'; // <-- Dùng domain từ .env
     List<String> fullImageUrls = [];
     if (json['images'] != null && json['images'] is List) {
       fullImageUrls = (json['images'] as List)

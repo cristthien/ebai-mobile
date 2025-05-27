@@ -26,12 +26,12 @@ class ProductDetailScreen extends StatelessWidget {
             return const Center(child: Text('Failed to load product details.'));
           } else {
             final product = controller.productDetails.value!;
-            print(product.specifications);
+            print(product.images);
             return SingleChildScrollView(
               child: Column(
                 children: [
                   /// 1 - Product Image Slider
-                  TProductImageSlider(), // TCurvedEdgesWidget
+                  TProductImageSlider(images:product.images), // TCurvedEdgesWidget
                   /// 2 - Product Details
                   Padding (
                     padding: const EdgeInsets.only(right: TSizes.defaultSpace, left: TSizes.defaultSpace, bottom: TSizes.defaultSpace),
