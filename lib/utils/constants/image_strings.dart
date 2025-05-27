@@ -36,4 +36,7 @@ class TImages {
 
   // -- User
   static const String user = "assets/images/user/user.png";
+
+  // -- Cloth Icon
+  static const String clothIcon = "assets/icons/clothes/user.svg";
 }

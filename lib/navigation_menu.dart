@@ -5,7 +5,9 @@ import 'package:iconsax/iconsax.dart'; // Đảm bảo import Iconsax
 import '../../features/authentication/screens/login/login.dart'; // Import LoginScreen
 import '../../features/personalization/screens/settings/settings.dart'; // Import SettingsScreen
 import '../../features/shop/screens/home/home.dart'; // Import HomeScreen
-import '../../data/local_storage/local_storage.dart'; // Đảm bảo đường dẫn đúng đến TLocalStorage của bạn
+import '../../data/local_storage/local_storage.dart';
+import 'features/shop/screens/store/store.dart';
+import 'features/shop/screens/wishlist/wishlist.dart'; // Đảm bảo đường dẫn đúng đến TLocalStorage của bạn
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -44,8 +46,9 @@ class NavigationController extends GetxController {
 
   final List<Widget> screens = [
     const HomeScreen(),
-    Container(color: Colors.purple), // Placeholder for StoreScreen
-    Container(color: Colors.orange), // Placeholder for FavouritesScreen
+    const StoreScreen(),
+    const FavouriteScreen(),
+    Container(color: Colors.purple), // Placeholder for StoreScreen// Placeholder for FavouritesScreen
     const SettingsScreen(), // Giữ nguyên SettingsScreen ở đây
   ];
 
