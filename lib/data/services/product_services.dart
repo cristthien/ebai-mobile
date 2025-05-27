@@ -1,6 +1,7 @@
 
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
+import '../../features/personalization/models/short_product_management_model.dart';
 import '../../features/shop/models/product_model.dart';
 import '../../features/shop/models/short_product_model.dart';
 import '../../utils/http/http_client.dart';
@@ -10,20 +11,17 @@ class TProductService {
   // Define API endpoints
   static const String _getNewListingProductsEndpoint = 'auctions/new-listing'; // Example endpoint for fetching all products
   static const String _getExploreByIdEndpoint = 'auctions/'; // Example endpoint for fetching a single product by ID
+  static const String _getAuctionsByUserIDEndpoint = 'auctions/user/-1'; // Example endpoint for fetching a single product by ID
 
   Future<List<ShortProductModel>> getNewListingProducts() async {
-
-
     try {
       // Send GET request using helper
       final Map<String, dynamic> responseData = await THttpHelper.get(_getNewListingProductsEndpoint);
-
       if (responseData['data'] is List) {
         final List<dynamic> productListJson = responseData['data'];
         final List<ShortProductModel> products = productListJson
             .map((json) => ShortProductModel.fromJson(json as Map<String, dynamic>))
             .toList();
-        print('Successfully fetched products: $products');
         return products;
       } else {
         throw Exception('Invalid data format received for products.');
@@ -57,6 +55,32 @@ class TProductService {
       // Catch error, print more detailed error message
       print('Error during fetching product details for slug "$slug": $e');
       rethrow; // Re-throw the error for the calling code to handle
+    }
+  }
+  Future<List<ShortProductManagementModel>> getAuctionsByUserID({
+    int page = 1,
+    int limit = 20,
+  }) async {
+    try {
+      final String fullEndpoint = '$_getAuctionsByUserIDEndpoint?page=$page&limit=$limit';
+
+      final Map<String, dynamic> responseData = await THttpHelper.get(fullEndpoint);
+      print('Received response: $responseData');
+      if (responseData['data']['data'] is List) {
+        final List<dynamic> productJsonList = responseData['data']['data'];
+        print('Received ${productJsonList} products for page $page, limit $limit.');
+        final List<ShortProductManagementModel> products = productJsonList
+            .map((json) => ShortProductManagementModel.fromJson(json as Map<String, dynamic>))
+            .toList();
+        return products;
+      } else {
+        // Xử lý trường hợp 'data' không phải là List hoặc không có
+        throw Exception('Invalid data format received for user auctions. Expected a list under "data" key.');
+      }
+    } catch (e) {
+      // Bắt lỗi và in ra thông báo chi tiết hơn
+      print('Error during fetching user auctions: $e');
+      rethrow; // Re-throw lỗi để code gọi hàm này có thể xử lý
     }
   }
 

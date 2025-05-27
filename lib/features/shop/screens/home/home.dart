@@ -36,19 +36,19 @@ class HomeScreen extends StatelessWidget {
                   TSearchContainer(text: 'Search in Store'),
                   SizedBox(height: TSizes.spaceBtwSections),
                   /// Categories
-                  Padding(
-                    padding: const EdgeInsets.only(left: TSizes.defaultSpace),
-                    child: Column(
-                      children: [
-                        /// Heading
-                        TSectionHeading(title: 'Popular Categories', showActionButton: false, textColor: Colors.white),
-                        SizedBox(height: TSizes.spaceBtwItems),
-                        /// Categories
-                        THomeCategories(), // SizedBox
-
-                      ],
-                    ),
-                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.only(left: TSizes.defaultSpace),
+                  //   child: Column(
+                  //     children: [
+                  //       /// Heading
+                  //       TSectionHeading(title: 'Popular Categories', showActionButton: false, textColor: Colors.white),
+                  //       SizedBox(height: TSizes.spaceBtwItems),
+                  //       /// Categories
+                  //       THomeCategories(), // SizedBox
+                  //
+                  //     ],
+                  //   ),
+                  // ),
 
                   SizedBox(height: TSizes.spaceBtwSections),
                 ],

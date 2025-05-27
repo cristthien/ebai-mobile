@@ -49,10 +49,10 @@ class LoginController extends GetxController {
         await TLocalStorage().saveData('username', userData['user']['username']);
         await TLocalStorage().saveData('role', userData['user']['role']);
         await TLocalStorage().saveData('email', email.text.trim());
+
       }
 
       TFullScreenLoader.stopLoading();
-      // // Show Success Message
       Get.to(() => NavigationMenu());
     }catch(e){
       TFullScreenLoader.stopLoading();
